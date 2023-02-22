@@ -26,6 +26,8 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComponent;
+	
+	void MoveForward(float Value);
 
 public:	
 	// Called every frame
