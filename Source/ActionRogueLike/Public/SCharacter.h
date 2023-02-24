@@ -8,6 +8,7 @@
 
 class UCameraComponent;
 class USpringArmComponent;
+class USInteractionComponent;
 
 UCLASS()
 class ACTIONROGUELIKE_API ASCharacter : public ACharacter
@@ -32,6 +33,9 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComponent;
 	
+	UPROPERTY(VisibleAnywhere)
+	USInteractionComponent* InteractionComp;
+	
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 
@@ -40,6 +44,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	void PrimaryAttack();
+	void PrimaryInteract();
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 

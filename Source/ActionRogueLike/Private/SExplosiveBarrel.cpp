@@ -19,7 +19,6 @@ ASExplosiveBarrel::ASExplosiveBarrel()
 	RadialForceComp = CreateDefaultSubobject<URadialForceComponent>("RadialForceComp");
 	RadialForceComp->SetupAttachment(StaticMeshComp);
 
-	//RadialForceComp->SetAutoActivate(false);
 	RadialForceComp->Radius = 750.0f;
 	RadialForceComp->ImpulseStrength = 2500.0f;
 	RadialForceComp->bImpulseVelChange = true;
@@ -51,7 +50,6 @@ void ASExplosiveBarrel::Tick(float DeltaTime)
 
 void ASExplosiveBarrel::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, FString::Printf(TEXT("HElp")));
 	RadialForceComp->FireImpulse();
 }
 
