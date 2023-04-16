@@ -8,6 +8,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
+
+
 // Sets default values
 ASCharacter::ASCharacter()
 {
@@ -63,6 +65,15 @@ void ASCharacter::Tick(float DeltaTime)
 }
 
 void ASCharacter::PrimaryAttack()
+{
+	PlayAnimMontage(AttackAnim);
+	
+	GetWorldTimerManager().SetTimer(TimerHandle_PrimaryAttack, this, &ASCharacter::PrimaryAttack_TimeElapsed, 0.2f);
+	
+	
+}
+
+void ASCharacter::PrimaryAttack_TimeElapsed()
 {
 	FVector MuzzleLoc = GetMesh()->GetSocketLocation("Muzzle_01");
 	FTransform SpawnTM = FTransform(GetControlRotation(),MuzzleLoc);
