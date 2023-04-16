@@ -48,7 +48,6 @@ SourceArt/**/*.tga
 # Binary Files
 Binaries/*
 Plugins/*/Binaries/*
-Plugins/*/RiderLink
 
 # Builds
 Build/*
@@ -73,4 +72,27 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-/Platforms/HoloLens/Config/HoloLensEngine.ini
+
+# 4coder project files
+*.4coder
+
+Plugins/Developer/RiderLink
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.SEEe.iml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+*.idea
+
+*Config/SteamVRBindings
+/Config/steamvr_ue_editor_app.json
